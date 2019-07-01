@@ -2,6 +2,7 @@ package com.medici.app.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 
 import com.medici.app.event.CustomEventHandler;
 import com.medici.app.event.CustomEventPublisher;
@@ -10,6 +11,7 @@ import com.medici.app.handler.ContextStopEventHandler;
 import com.medici.app.service.Manager;
 import com.medici.app.service.ManagerImpl;
 
+@Import({ SchedulerConfig.class, ApplicationBuilder.class })
 @Configuration
 public class AppConfig {
 

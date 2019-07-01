@@ -29,6 +29,6 @@
 	</dependencies>
 
 	<modules>
-		<module>JavaConfigurationSpringApplication</module>
+		<module>INTRODUCTION-TO-SPRING</module>
 	</modules>
 </project>
