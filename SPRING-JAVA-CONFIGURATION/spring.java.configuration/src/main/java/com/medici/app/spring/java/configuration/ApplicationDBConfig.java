@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
@@ -15,7 +16,8 @@ import com.medici.app.spring.java.dao.BaseDAO;
 
 @Configuration
 @PropertySource({ "classpath:application.properties" })
-public class ApplicationBeansConfig {
+@ImportResource("classpath:app-config.xml")
+public class ApplicationDBConfig {
 
 	@Autowired
 	Environment env;
