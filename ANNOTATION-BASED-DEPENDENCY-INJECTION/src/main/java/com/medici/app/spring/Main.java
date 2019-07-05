@@ -5,6 +5,7 @@ import org.springframework.context.support.AbstractApplicationContext;
 
 import com.medici.app.spring.config.AppConfig;
 import com.medici.app.spring.facade.EmployeeService;
+import com.medici.app.spring.life.cycle.MailService;
 import com.medici.app.spring.model.Employee;
 
 public class Main {
@@ -17,6 +18,9 @@ public class Main {
 		Employee employee = new Employee();
 		employee.setName("James Medici");
 		service.registerEmployee(employee);
+
+		MailService mailService1 = context.getBean(MailService.class);
+		mailService1.send("james@dust.com");
 
 		context.close();
 	}
