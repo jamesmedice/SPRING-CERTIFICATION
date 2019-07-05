@@ -1,5 +1,6 @@
 package com.medici.app.spring.life.cycle;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,8 +19,14 @@ public class MailService {
 	}
 
 	public void send(String mailTo) {
-		// Code for sending mail
 		System.out.println("Inside send method - " + mailTo);
+	}
+
+	public Collection<String> getProperties() {
+		if (map == null)
+			map = new HashMap<String, String>();
+
+		return map.values();
 	}
 
 	@PostConstruct

@@ -13,14 +13,15 @@ public class Main {
 	public static void main(String[] args) {
 		AbstractApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
+		MailService mailService1 = context.getBean(MailService.class);
+		System.out.println(mailService1.getProperties().toString());
+		mailService1.send("james@dust.com");
+		
+		
 		EmployeeService service = (EmployeeService) context.getBean("employeeService");
-
 		Employee employee = new Employee();
 		employee.setName("James Medici");
 		service.registerEmployee(employee);
-
-		MailService mailService1 = context.getBean(MailService.class);
-		mailService1.send("james@dust.com");
 
 		context.close();
 	}
