@@ -8,6 +8,7 @@ import org.springframework.expression.spel.standard.SpelExpressionParser;
 import org.springframework.expression.spel.support.StandardEvaluationContext;
 
 import com.medici.app.spring.java.configuration.AppConfig;
+import com.medici.app.spring.java.configuration.AppConfigBean;
 import com.medici.app.spring.java.configuration.ApplicationDBConfig;
 import com.medici.app.spring.java.dao.BaseDAO;
 import com.medici.app.spring.java.model.SuperUser;
@@ -15,6 +16,7 @@ import com.medici.app.spring.java.spel.AccessCollections;
 import com.medici.app.spring.java.spel.ArithmeticOperators;
 import com.medici.app.spring.java.spel.LogicalOperators;
 import com.medici.app.spring.java.spel.RegexOperations;
+import com.medici.app.spring.prototype.SingletonBean;
 import com.medici.app.spring.resource.AppDataSource;
 
 public class Main {
@@ -27,10 +29,15 @@ public class Main {
 		context.register(ApplicationDBConfig.class);
 		context.getEnvironment().setActiveProfiles("dev");
 		context.register(AppConfig.class);
+		context.register(AppConfigBean.class);
 		context.refresh();
 
 		AppDataSource bean = context.getBean(AppDataSource.class);
 		System.out.println(bean.getDataSourceName());
+		System.out.println("/////////////////////////////////////////////////////////////////////");
+
+		SingletonBean singletonBean = context.getBean(SingletonBean.class);
+		singletonBean.showMessage();
 		System.out.println("/////////////////////////////////////////////////////////////////////");
 
 		BaseDAO baseDao = (BaseDAO) context.getBean("baseDao");
