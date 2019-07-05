@@ -6,6 +6,7 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -36,9 +37,13 @@ public class PerformanceAspect {
 		System.out.println("PROPERTIES METHOD - LoggingAspect.logAfterReturningPropertiesMethods() : " + joinPoint.getSignature().getName());
 	}
 
+	@AfterThrowing(pointcut = "execution(* com.medici.app.spring.*.*.*.update*(..))", throwing = "ex")
+	public void logAfterThrowingAllMethods(Exception ex) throws Throwable {
+		System.out.println("****LoggingAspect.logAfterThrowingAllMethods() " + ex);
+	}
+
 	@Pointcut("execution(* com.medici.app.spring.*.*.*.send*(..))")
 	public void send() {
-
 	};
 
 	@Around("send()")

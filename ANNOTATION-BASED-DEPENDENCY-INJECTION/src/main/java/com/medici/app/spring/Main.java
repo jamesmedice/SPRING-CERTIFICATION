@@ -16,12 +16,15 @@ public class Main {
 		MailService mailService1 = context.getBean(MailService.class);
 		System.out.println(mailService1.getProperties().toString());
 		mailService1.send("james@dust.com");
-		
-		
+
 		EmployeeService service = (EmployeeService) context.getBean("employeeService");
 		Employee employee = new Employee();
 		employee.setName("James Medici");
 		service.registerEmployee(employee);
+		employee.setName("James Medici 2");
+		service.mergeEmployee(employee);
+		service.findEmploye(15);
+		service.allEmployees();
 
 		context.close();
 	}

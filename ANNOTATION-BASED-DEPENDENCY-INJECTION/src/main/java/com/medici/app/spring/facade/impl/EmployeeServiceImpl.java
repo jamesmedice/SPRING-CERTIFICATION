@@ -1,5 +1,7 @@
 package com.medici.app.spring.facade.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,5 +22,23 @@ public class EmployeeServiceImpl implements EmployeeService {
 	public void registerEmployee(Employee employee) {
 		employee.setAssessmentDate(dateService.getNextAssessmentDate());
 		employeeDao.saveInDatabase(employee);
+	}
+
+	public void mergeEmployee(Employee employee) {
+		try {
+			employee.setAssessmentDate(dateService.getNextAssessmentDate());
+			employeeDao.updateEmployee(employee);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
+	public Employee findEmploye(int employeeId) {
+		return employeeDao.findEmployeeById(employeeId);
+
+	}
+	
+	public List<Employee> allEmployees() {
+		return employeeDao.findAll();
 	}
 }
