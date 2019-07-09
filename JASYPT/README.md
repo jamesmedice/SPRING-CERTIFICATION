@@ -36,3 +36,8 @@ the java property
 
 	@Value("${config.db.password}")
 	private String password;
+	
+	
+RUNNING : mvn -Djasypt.encryptor.password=jamesmedice   spring-boot:run
+	  note that the parameter jasypt.encryptor.password for VM has to match  org.jasypt.intf.cli.JasyptPBEStringEncryptionCLI input="password" password=jamesmedice
+	
