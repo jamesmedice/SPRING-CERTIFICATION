@@ -6,7 +6,12 @@ import org.springframework.context.support.AbstractApplicationContext;
 import com.medici.app.spring.config.AppConfig;
 import com.medici.app.spring.model.Employee;
 
-public class App {
+public class Application {
+
+	public Application() {
+		super();
+	}
+
 	public static void main(String[] args) {
 
 		AbstractApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
@@ -22,6 +27,8 @@ public class App {
 
 		Employee autowiring = (Employee) context.getBean("autowiring");
 		System.out.println(autowiring.toString());
+
+		System.out.println(System.getenv().values().toString());
 
 		context.close();
 	}

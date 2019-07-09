@@ -8,7 +8,16 @@ public class SingleEmployeeFactory extends AbstractFactoryBean<Employee> {
 
 	private String designation;
 	private String lastName;
+	private String password;
 
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
 	public String getDesignation() {
 		return designation;
 	}
@@ -37,6 +46,7 @@ public class SingleEmployeeFactory extends AbstractFactoryBean<Employee> {
 		employee.setFirstName("dummy");
 		employee.setLastName(lastName);
 		employee.setDesignation(designation);
+		employee.setPassword(password);
 		return employee;
 	}
 

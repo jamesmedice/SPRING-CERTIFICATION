@@ -1,0 +1,9 @@
+server:
+  port: 9192
+
+db:
+  timer: 1002258888
+
+config:
+  db:
+    password: ENC(cF9oPFRBYyDsD1n3zF6kuKc2Oxin9FR5P91pqA04SLA=)
