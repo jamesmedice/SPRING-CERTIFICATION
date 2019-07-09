@@ -29,5 +29,6 @@
 	<modules>
 		<module>INTRODUCTION-TO-SPRING</module>
     <module>ANNOTATION-BASED-DEPENDENCY-INJECTION</module>
+    <module>FACTORY-PATTERN-SPRING</module>
   </modules>
 </project>
