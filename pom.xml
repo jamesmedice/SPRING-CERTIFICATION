@@ -40,5 +40,6 @@
 		<module>FACTORY-PATTERN-SPRING</module>
     <module>JASYPT</module>
     <module>ADVANCED-SPRING</module>
+    <module>ASPECT-ORIENTED-PROGRAMMING</module>
   </modules>
 </project>
