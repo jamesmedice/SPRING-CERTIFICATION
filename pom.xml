@@ -39,5 +39,6 @@
 		<module>ANNOTATION-BASED-DEPENDENCY-INJECTION</module>
 		<module>FACTORY-PATTERN-SPRING</module>
     <module>JASYPT</module>
+    <module>ADVANCED-SPRING</module>
   </modules>
 </project>
