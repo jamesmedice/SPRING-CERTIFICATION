@@ -12,7 +12,7 @@ public class SecurityAspect implements Ordered {
 
 	@Before("execution(java.util.List *.*All(..))")
 	public void beforeAdviceTransferMethods(JoinPoint jp) throws Throwable {
-		System.out.println("SecurityAspect.beforeAdviceTransferMethods() " + jp.getSignature().getName());
+		System.out.println("SecurityAspect.beforeAdviceTransferMethods() " + jp.getSignature().getDeclaringType() + "." + jp.getSignature().getName());
 	}
 
 	public int getOrder() {

@@ -10,9 +10,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class PersistenceAspect implements Ordered {
 
-	@Before("execution(java.util.List *.all*(..))")
+	@Before("execution(java.util.List *.*All(..))")
 	public void beforeAdviceTransferMethods(JoinPoint jp) throws Throwable {
-		System.out.println("PersistenceAspect.beforeAdviceTransferMethods() " + jp.getSignature().getName());
+		System.out.println("PersistenceAspect.beforeAdviceTransferMethods() " + jp.getSignature().getDeclaringType() + "." + jp.getSignature().getName());
 	}
 
 	public int getOrder() {

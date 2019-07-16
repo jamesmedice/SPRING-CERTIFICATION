@@ -10,7 +10,7 @@ public interface DirectorService {
 
 	void mergeDirector(Director director);
 
-	Director findDirector(int directorId);
+	Director findDirectorById(int directorId);
 
-	List<Director> allDirectors();
+	List<Director> findAll();
 }

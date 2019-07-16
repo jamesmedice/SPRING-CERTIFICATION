@@ -18,9 +18,14 @@ public class App {
 	public static void main(String[] args) {
 		AbstractApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
-		SmtpService mailService1 = context.getBean(SmtpService.class);
-		System.out.println(mailService1.getProperties().toString());
-		mailService1.send("medice@dust.com");
+		try {
+			SmtpService mailService1 = context.getBean(SmtpService.class);
+			System.out.println(mailService1.getProperties().toString());
+			System.out.println(mailService1.getTree().toString());
+			mailService1.send("medice@dust.com");
+			mailService1.throwIllegalArgument("[exception]");
+		} catch (Exception e) {
+		}
 
 		DirectorService service = (DirectorService) context.getBean("directorService");
 		Director director = new Director();
@@ -28,8 +33,8 @@ public class App {
 		service.registerDirector(director);
 		director.setName(" Medici hoffeinhein");
 		service.mergeDirector(director);
-		service.findDirector(10);
-		service.allDirectors();
+		service.findDirectorById(10);
+		service.findAll();
 
 		context.close();
 	}
