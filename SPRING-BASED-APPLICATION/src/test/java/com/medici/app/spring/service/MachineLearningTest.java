@@ -8,6 +8,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.test.annotation.DirtiesContext;
+import org.springframework.test.annotation.DirtiesContext.ClassMode;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -16,6 +18,7 @@ import com.medici.app.spring.service.impl.MachineLearningService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { AppConfig.class })
+@DirtiesContext(classMode = ClassMode.AFTER_EACH_TEST_METHOD)
 public class MachineLearningTest {
 
 	@Autowired
@@ -29,6 +32,19 @@ public class MachineLearningTest {
 
 		assertThat(machine.isValid(""), is(true));
 
+	}
+
+	@Test(expected = StackOverflowError.class)
+	public void stackOverflowErrorTest() {
+		recursiveLogInfo(1);
+	}
+
+	public void recursiveLogInfo(int nummer) {
+
+		if (nummer == 0)
+			return;
+		else
+			recursiveLogInfo(++nummer);
 	}
 
 }
