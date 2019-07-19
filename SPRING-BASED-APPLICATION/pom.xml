@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.medici.app</groupId>
+	<artifactId>spring.based.application</artifactId>
+	<version>0.0.1</version>
+	<name>SPRING-BASED-APPLICATION</name>
+	<url>http://maven.apache.org</url>
+
+	<parent>
+		<groupId>com.medici.app</groupId>
+		<artifactId>certification</artifactId>
+		<version>0.0.1</version>
+	</parent>
+
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<scope>test</scope>
+			<version>${spring}</version>
+		</dependency>
+
+	</dependencies>
+
+</project>
