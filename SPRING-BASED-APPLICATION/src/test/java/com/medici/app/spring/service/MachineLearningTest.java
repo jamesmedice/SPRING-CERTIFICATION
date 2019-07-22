@@ -27,11 +27,8 @@ public class MachineLearningTest {
 
 	@Test
 	public void test_machine_learning_return_true() {
-
 		assertThat(machine, instanceOf(MachineLearningService.class));
-
 		assertThat(machine.isValid(""), is(true));
-
 	}
 
 	@Test(expected = StackOverflowError.class)
