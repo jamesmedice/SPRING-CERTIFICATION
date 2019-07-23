@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.medici.app.spring.dao.DirectorDao;
 import com.medici.app.spring.model.Director;
 
-@Repository("directorDao")
+@Repository
 public class DirectorDaoImpl implements DirectorDao {
 
 	public void saveInDatabase(Director director) {
@@ -24,8 +24,7 @@ public class DirectorDaoImpl implements DirectorDao {
 	}
 
 	public Director findDirectorById(int directorId) {
-		Director director = getDirector();
-		return director;
+		return getDirector();
 	}
 
 	public List<Director> findAll() {

@@ -14,10 +14,10 @@ import com.medici.app.spring.model.Director;
 public class DirectorServiceImpl implements DirectorService {
 
 	@Autowired
-	private TimeService timeService;
+	TimeService timeService;
 
 	@Autowired
-	private DirectorDao directorDao;
+	DirectorDao directorDao;
 
 	public void registerDirector(Director director) {
 		director.setAssessmentDate(timeService.getNextAssessmentDate());
@@ -33,12 +33,11 @@ public class DirectorServiceImpl implements DirectorService {
 		}
 	}
 
-	public Director findDirector(int directorId) {
+	public Director findDirectorById(int directorId) {
 		return directorDao.findDirectorById(directorId);
-
 	}
 
-	public List<Director> allDirectors() {
+	public List<Director> findAll() {
 		return directorDao.findAll();
 	}
 }

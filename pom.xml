@@ -41,5 +41,6 @@
     <module>JASYPT</module>
     <module>ADVANCED-SPRING</module>
     <module>ASPECT-ORIENTED-PROGRAMMING</module>
+    <module>SPRING-BASED-APPLICATION</module>
   </modules>
 </project>

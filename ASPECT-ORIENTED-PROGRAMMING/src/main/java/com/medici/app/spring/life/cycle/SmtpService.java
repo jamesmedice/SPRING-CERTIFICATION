@@ -3,6 +3,7 @@ package com.medici.app.spring.life.cycle;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -27,6 +28,16 @@ public class SmtpService {
 			map = new HashMap<String, String>();
 
 		return map.values();
+	}
+
+	public Map<String, String> getTree() {
+		Map<String, String> tree = new TreeMap<String, String>();
+		tree.putAll(map);
+		return tree;
+	}
+
+	public void throwIllegalArgument(String message) {
+		throw new IllegalArgumentException(message);
 	}
 
 	@PostConstruct
