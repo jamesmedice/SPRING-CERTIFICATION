@@ -11,6 +11,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @DirtiesContext(classMode = ClassMode.AFTER_EACH_TEST_METHOD)
 public class ProfileTest {
 
+	protected static final String SPRING_PROFILES_ACTIVE = "spring.profiles.active";
+
 	@BeforeAll
 	static void setup() {
 		System.out.println("@BeforeAll - executes once before all test methods in this class");
