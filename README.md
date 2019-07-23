@@ -154,6 +154,7 @@ QUESTIONS
 -  What does a static @Bean method do?  What is a ProperySourcesPlaceholderConfigurer used for?  What is a namespace used for in XML configuration?
 -  If you saw one of the <context/> elements covered in the course, would you know what it does?  What is @Value used for?  What is the difference between $ and # in @Value expressions?
 
+
 * The Aspect-Oriented Programming 
 -  What is the concept of AOP? Which problem does it solve?
 -  What is a pointcut, a join point, an advice, an aspect, weaving?
@@ -171,6 +172,7 @@ QUESTIONS
 -  How are the five advice types called?
 -  Which advice do you have to use if you would like to try and catch exceptions?
 -  What is the difference between @EnableAspectJAutoProxy and <aop:aspectjautoproxy>?
+
 
 * JDBC, Transactions, And ORM 
 -  What is the difference between checked and unchecked exceptions?
@@ -208,6 +210,7 @@ QUESTIONS
 -  What is an "instant repository"? (hint: recall Spring Data)
 -  How do you define an instant repository?  What is @Query used for?
 
+
 * Spring MVC And The Web Layer 
 -  MVC is an abbreviation for a design pattern. What does it stand for and what is the idea behind it?
 -  Do you need spring-mvc.jar in your classpath or is it part of spring-core?
@@ -230,6 +233,7 @@ QUESTIONS
 -  Why are controllers testable artifacts?
 -  What does the InternalResourceViewResolver do?
 
+
 * Spring Boot 
 -  What is Spring Boot?  What are the advantages of using Spring Boot?
 -  Why is it 'opinionated'?  How does it work? How does it know what to configure?
@@ -239,6 +243,7 @@ QUESTIONS
 -  What is a Spring Boot starter POM? Why is it useful?
 -  Spring Boot supports both Java properties and YML files. Would you recognize and understand them if you saw them?
 -  Can you control logging with Spring Boot? How?
+
 
 * Security 
 -  What is the delegating filter proxy?
@@ -256,6 +261,7 @@ QUESTIONS
 -  What is authentication and authorization? Which must come first?
 -  In which security annotation are you allowed to use SpEL?
 -  Does Spring Security support password hashing? What is salting?
+
 
 * REST 
 -  What does REST stand for?
@@ -279,6 +285,7 @@ QUESTIONS
 -  Name some common http response codes. When do you need @ResponseStatus?
 -  Does REST work with transport layer security (TLS)?
 -  Do you need Spring MVC in your classpath?
+
 
 * Microservices 
 -  What is a microservices architecture?
