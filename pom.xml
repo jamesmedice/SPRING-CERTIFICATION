@@ -22,6 +22,7 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<spring>5.0.6.RELEASE</spring>
+		<mysql>5.1.47</mysql>
 	</properties>
 
 	<dependencyManagement>
@@ -42,5 +43,6 @@
     <module>ADVANCED-SPRING</module>
     <module>ASPECT-ORIENTED-PROGRAMMING</module>
     <module>SPRING-BASED-APPLICATION</module>
+    <module>DATA-ACCESS-AND-JDBC-WITH-SPRING</module>
   </modules>
 </project>
