@@ -9,36 +9,59 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.medici.app.spring.dao.JDBCCustomerDAO;
-import com.medici.app.spring.mapper.EmployeeRowMapper;
+import com.medici.app.spring.mapper.CustomerRowMapper;
 import com.medici.app.spring.model.Customer;
+import com.medici.app.spring.utils.QueryContants;
 
 @Repository
 public class JDBCCustomerDAOImpl implements JDBCCustomerDAO {
 
 	private static final String INSERT_INTO_CUSTOMER_VALUES = "INSERT INTO  CUSTOMER (store_id,first_name,last_name,email,address_id,active,create_date,last_update)VALUES(?,?,?,?,?,?,?,?)";
 
-	private static final String SELECT_NAME_FROM_CUSTOMER_WHERE_ID = "SELECT first_name FROM CUSTOMER WHERE CUSTOMER_ID = ?";
+	private static final String SELECT_NAME_FROM_CUSTOMER_WHERE_ID = "SELECT * FROM CUSTOMER WHERE CUSTOMER_ID = ?";
+
+	private static final String SELECT_NAME_FROM_CUSTOMER_RANGE = "SELECT * FROM CUSTOMER  LIMIT  ? OFFSET  ?";
 
 	private static final String SELECT_FROM_CUSTOMER = "SELECT * FROM CUSTOMER";
+
+	private static final String SELECT_FROM_CUSTOMER_BY_EMAIL = "SELECT * FROM CUSTOMER WHERE EMAIL LIKE ?";
+
+	private static final String SELECT_FROM_CUSTOMER_BY_NAME = "SELECT * FROM CUSTOMER WHERE FIRST_NAME LIKE ? AND LAST_NAME LIKE ?";
 
 	private static final String UPDATE_QUERY = "UPDATE CUSTOMER SET store_id= ? ,first_name= ? ,last_name= ? ,email= ? ,address_id = ? ,active = ?,create_date = ?,last_update = ? WHERE CUSTOMER_ID = ?";
 
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 
+	public List<Customer> findByLimit(Integer limit, Integer offset) {
+		System.out.println("query: " + SELECT_NAME_FROM_CUSTOMER_RANGE);
+		return jdbcTemplate.query(SELECT_NAME_FROM_CUSTOMER_RANGE, new Object[] { limit, offset }, new CustomerRowMapper());
+	}
+
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public Customer findById(int id) {
-		return (Customer) jdbcTemplate.queryForObject(SELECT_NAME_FROM_CUSTOMER_WHERE_ID, new Object[] { id }, new BeanPropertyRowMapper(Customer.class));
+		System.out.println("query: " + SELECT_NAME_FROM_CUSTOMER_WHERE_ID);
+		return (Customer) jdbcTemplate.queryForObject(SELECT_NAME_FROM_CUSTOMER_WHERE_ID, new Object[] { id }, new CustomerRowMapper());
 
 	}
 
+	public List<Customer> findByEmail(String email) {
+		System.out.println("query: " + SELECT_FROM_CUSTOMER_BY_EMAIL);
+		return jdbcTemplate.query(SELECT_FROM_CUSTOMER_BY_EMAIL, new String[] { QueryContants.PERCENTAGE + email + QueryContants.PERCENTAGE }, new CustomerRowMapper());
+	}
+
+	public List<Customer> findByFullName(String firstName, String lastName) {
+		System.out.println("query: " + SELECT_FROM_CUSTOMER_BY_NAME);
+		return jdbcTemplate.query(SELECT_FROM_CUSTOMER_BY_NAME, new String[] { QueryContants.PERCENTAGE + firstName + QueryContants.PERCENTAGE, QueryContants.PERCENTAGE + lastName + QueryContants.PERCENTAGE },
+				new CustomerRowMapper());
+	}
+
 	public List<Customer> getAll() {
-		return jdbcTemplate.query(SELECT_FROM_CUSTOMER, new EmployeeRowMapper());
+		return jdbcTemplate.query(SELECT_FROM_CUSTOMER, new CustomerRowMapper());
 	}
 
 	@SuppressWarnings("rawtypes")

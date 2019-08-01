@@ -12,9 +12,15 @@ import com.medici.app.spring.model.Customer;
  */
 public interface JDBCCustomerDAO {
 
+	public List<Customer> findByLimit(Integer limit, Integer offset);
+
 	public void insert(Customer customer);
 
 	public Customer findById(int id);
+
+	public List<Customer> findByEmail(String email);
+
+	public List<Customer> findByFullName(String firstName, String lastName);
 
 	public List<Customer> getAll();
 
@@ -33,4 +39,5 @@ public interface JDBCCustomerDAO {
 	public int update(Integer customer_id, Integer store_id, String first_name, String last_name, String email, Integer address_id, Boolean active, Date create_date);
 
 	public int update(Integer customer_id, Integer store_id, String first_name, String last_name, String email, Integer address_id, Boolean active, Date create_date, Date last_update);
+
 }

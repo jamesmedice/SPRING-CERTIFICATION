@@ -11,11 +11,19 @@ import com.medici.app.spring.model.Customer;
  */
 public interface CustomerService {
 
+	abstract List<Customer> findByLimit(Integer limit, Integer offset);
+
 	abstract List<Customer> findAll();
 
 	abstract List<Customer> getAll();
 
+	abstract Customer findById(Customer customer);
+
 	abstract Customer findById(int id);
+
+	abstract List<Customer> findByEmail(String email);
+
+	abstract List<Customer> findByFullName(String firstName, String lastName);
 
 	abstract int getMaxRows();
 

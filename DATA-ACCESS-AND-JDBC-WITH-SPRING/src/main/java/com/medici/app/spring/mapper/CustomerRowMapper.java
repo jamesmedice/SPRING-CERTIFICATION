@@ -7,7 +7,7 @@ import org.springframework.jdbc.core.RowMapper;
 
 import com.medici.app.spring.model.Customer;
 
-public class EmployeeRowMapper implements RowMapper<Customer> {
+public class CustomerRowMapper implements RowMapper<Customer> {
 
 	public Customer mapRow(ResultSet rs, int rowNum) throws SQLException {
 		Customer customer = new Customer();

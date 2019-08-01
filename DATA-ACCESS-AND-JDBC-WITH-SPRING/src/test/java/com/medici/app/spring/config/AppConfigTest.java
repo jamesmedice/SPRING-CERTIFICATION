@@ -20,9 +20,9 @@ import com.medici.app.spring.utils.CypherUtils;
 
 @Configuration
 @EnableCaching
-@PropertySource("classpath:application.properties")
+@PropertySource("classpath:application-test.properties")
 @ComponentScan(basePackages = "com.medici.app.spring")
-public class AppConfig {
+public class AppConfigTest {
 
 	@Value("${mysql.driverClassName}")
 	private String driver;
