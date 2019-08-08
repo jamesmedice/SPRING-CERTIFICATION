@@ -42,5 +42,6 @@
     <module>ASPECT-ORIENTED-PROGRAMMING</module>
     <module>SPRING-BASED-APPLICATION</module>
     <module>DATA-ACCESS-AND-JDBC-WITH-SPRING</module>
+    <module>DATABASE-TRANSACTIONS-SPRING</module>
   </modules>
 </project>
