@@ -6,9 +6,9 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.medici.app</groupId>
-	<artifactId>aspect.oriented.programming</artifactId>
+	<artifactId>data.access.jdbc.spring</artifactId>
 	<version>0.0.1</version>
-	<name>ASPECT-ORIENTED-PROGRAMMING</name>
+	<name>DATA-ACCESS-AND-JDBC-WITH-SPRING</name>
 	<url>http://maven.apache.org</url>
 
 	<parent>
@@ -23,8 +23,6 @@
 	</properties>
 
 	<dependencies>
-
-
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
@@ -33,8 +31,30 @@
 
 		<dependency>
 			<groupId>org.springframework</groupId>
-			<artifactId>spring-aspects</artifactId>
+			<artifactId>spring-jdbc</artifactId>
 			<version>${spring}</version>
 		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
+
 </project>
