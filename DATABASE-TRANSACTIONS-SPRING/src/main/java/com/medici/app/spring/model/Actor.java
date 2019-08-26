@@ -15,9 +15,6 @@ import javax.persistence.Table;
 // @Proxy(lazy = false)
 public class Actor implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 8628206533884541242L;
 
 	@Id
