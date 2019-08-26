@@ -30,10 +30,12 @@ public class App {
 		actor = service.getById(id);
 		System.out.println(actor.toString());
 
-		actor.setFirst_name("BRUCE");
-		actor.setLast_update(Calendar.getInstance().getTime());
-		service.update(actor);
-		System.out.println(actor.toString());
+		Actor actor4Up = new Actor();
+		actor4Up.setActor_id(id);
+		actor4Up.setFirst_name("ANDY");
+		actor4Up.setLast_name("SPRINGSTEEN");
+		actor4Up.setLast_update(Calendar.getInstance().getTime());
+		service.update(actor4Up);
 
 		actor = service.loadById(id);
 		System.out.println(actor.toString());
