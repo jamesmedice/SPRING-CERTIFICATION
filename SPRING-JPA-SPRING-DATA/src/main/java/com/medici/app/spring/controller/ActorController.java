@@ -1,4 +1,4 @@
-package com.medici.app.spring.config;
+package com.medici.app.spring.controller;
 
 import java.util.List;
 import java.util.Optional;
