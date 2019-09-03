@@ -1,6 +1,5 @@
 package com.medici.app.spring.sevice;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,10 +20,6 @@ public class ActorService {
 
 	public Iterable<Actor> findAll() {
 		return repository.findAll();
-	}
-
-	public List<Actor> findByFirstName(String name) {
-		return repository.findByFirstName(name);
 	}
 
 	public boolean existsById(Integer id) {

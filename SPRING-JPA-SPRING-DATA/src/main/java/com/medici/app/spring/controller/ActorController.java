@@ -1,6 +1,5 @@
 package com.medici.app.spring.controller;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,7 +39,7 @@ public class ActorController {
 		return new ResponseEntity(flag, HttpStatus.OK);
 	}
 
-	@GetMapping("/{id}/")
+	@GetMapping("/{id}/id")
 	@ApiOperation(consumes = "application/json", produces = "application/json", protocols = "http", value = "findById")
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Successfully retrieved Actor"),
 			@ApiResponse(code = 401, message = "The request has not been applied because it lacks valid authentication credentials for the target resource"),
@@ -50,23 +49,13 @@ public class ActorController {
 		return new ResponseEntity(actor, HttpStatus.OK);
 	}
 
-	@PostMapping
+	@PostMapping("/save")
 	@ApiOperation(consumes = "application/json", produces = "application/json", protocols = "http", value = "save")
-	@ApiResponses(value = { @ApiResponse(code = 200, message = "Successfully Added Actor"),
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Successfully Saved Actor"),
 			@ApiResponse(code = 401, message = "The request has not been applied because it lacks valid authentication credentials for the target resource"),
 			@ApiResponse(code = 403, message = "The server understood the request but refuses to authorize it"), @ApiResponse(code = 404, message = "The resource  not found") })
 	public ResponseEntity save(@RequestBody Actor entity) {
 		Actor actor = actorService.save(entity);
-		return new ResponseEntity(actor, HttpStatus.OK);
-	}
-
-	@GetMapping("/firstName/{name}")
-	@ApiOperation(consumes = "application/json", produces = "application/json", protocols = "http", value = "findByFirstName")
-	@ApiResponses(value = { @ApiResponse(code = 200, message = "Successfully retrieved Actors by first name"),
-			@ApiResponse(code = 401, message = "The request has not been applied because it lacks valid authentication credentials for the target resource"),
-			@ApiResponse(code = 403, message = "The server understood the request but refuses to authorize it"), @ApiResponse(code = 404, message = "The resource  not found") })
-	public ResponseEntity findByFirstName(@ApiParam("Id of user, Can not be null") @PathVariable String name) throws Exception {
-		List<Actor> actor = actorService.findByFirstName(name);
 		return new ResponseEntity(actor, HttpStatus.OK);
 	}
 
