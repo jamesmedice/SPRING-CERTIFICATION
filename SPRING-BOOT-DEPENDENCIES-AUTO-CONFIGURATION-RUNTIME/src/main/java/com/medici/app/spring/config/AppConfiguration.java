@@ -7,16 +7,17 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-@org.springframework.context.annotation.Configuration
+@Configuration
 @ComponentScan(basePackages = "com.medici.app.spring")
 @EnableTransactionManagement
-public class Configuration {
+public class AppConfiguration {
 
 	@Value("${spring.datasource.driver-class-name}")
 	private String driver;
