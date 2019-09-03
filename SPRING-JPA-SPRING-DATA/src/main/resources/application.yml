@@ -8,6 +8,7 @@ spring:
     username: root
     password: ENC(v7n/JfNnlb3D3hXmd7c9Lg==)
   jpa:
+    show-sql: true
     hibernate:
       ddl-auto: update
     properties:
