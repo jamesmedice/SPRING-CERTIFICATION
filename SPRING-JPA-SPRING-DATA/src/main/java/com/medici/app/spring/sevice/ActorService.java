@@ -8,6 +8,11 @@ import org.springframework.stereotype.Service;
 import com.medici.app.spring.model.Actor;
 import com.medici.app.spring.repository.ActorRepository;
 
+/**
+ * 
+ * @author a73s
+ *
+ */
 @Service
 public class ActorService {
 

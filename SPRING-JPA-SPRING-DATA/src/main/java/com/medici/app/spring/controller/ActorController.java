@@ -20,7 +20,11 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
-
+/**
+ * 
+ * @author a73s
+ *
+ */
 @RestController
 @RequestMapping("/actor")
 @Api(value = "ActorResources", consumes = "application/json", produces = "application/json", protocols = "http", description = "Operations Related to Actor")

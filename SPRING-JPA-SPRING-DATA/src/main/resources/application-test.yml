@@ -6,7 +6,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/sakila
     username: root
-    password: tpm1234
+    password: ENC(qBVpg2mgq5ZXkkG6pIgeAg==)
   jpa:
     show-sql: true
     hibernate:
@@ -14,3 +14,6 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  test:
+    database:
+      replace: none
