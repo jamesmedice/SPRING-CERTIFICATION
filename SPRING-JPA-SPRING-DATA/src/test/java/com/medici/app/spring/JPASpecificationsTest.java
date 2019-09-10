@@ -19,6 +19,11 @@ import com.medici.app.spring.model.Actor;
 import com.medici.app.spring.repository.ActorRepository;
 import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties;
 
+/**
+ * 
+ * @author a73s
+ *
+ */
 @RunWith(SpringRunner.class)
 @DataJpaTest
 @ActiveProfiles("test")
@@ -33,7 +38,6 @@ public class JPASpecificationsTest {
 
 	@Test
 	public void save_Test() {
-
 		Actor entity = new Actor();
 		entity.setFirst_name("John");
 		entity.setLast_name("Irons");

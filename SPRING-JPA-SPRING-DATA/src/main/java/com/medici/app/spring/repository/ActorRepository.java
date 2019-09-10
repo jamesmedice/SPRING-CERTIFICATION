@@ -10,13 +10,18 @@ import org.springframework.stereotype.Repository;
 
 import com.medici.app.spring.model.Actor;
 
+/**
+ * 
+ * @author a73s
+ *
+ */
 @Repository
 public interface ActorRepository extends JpaRepository<Actor, Integer>, JpaSpecificationExecutor<Actor> {
 
-	@Query("SELECT req FROM Actor req  WHERE req.first_name LIKE %:firstName% ")
+	@Query("SELECT req FROM Actor req WHERE req.first_name LIKE %:firstName%")
 	List<Actor> findByFirstName(@Param("firstName") String firstName);
 
-	@Query("SELECT req FROM Actor req  WHERE   req.last_name  LIKE %:lastName%")
+	@Query("SELECT req FROM Actor req WHERE req.last_name LIKE %:lastName%")
 	List<Actor> findByLastName(@Param("lastName") String lastName);
 
 }
