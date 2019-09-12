@@ -1,4 +1,4 @@
-# INTRODUCTION SPRING
+# INTRODUCTION SPRING FRAMEWORK
 
 INTRODUCTION TO SPRING
 *  Java configuration and the Spring application context
