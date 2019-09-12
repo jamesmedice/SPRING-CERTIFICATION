@@ -1,0 +1,16 @@
+server:
+  port: ${PORT:8855}
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/sakila
+    username: root
+    password: ENC(v7n/JfNnlb3D3hXmd7c9Lg==)
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect

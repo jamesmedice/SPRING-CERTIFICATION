@@ -1,11 +1,11 @@
 package com.medici.app.spring.config;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-import com.medici.app.spring.model.Employee;
 import com.ulisesbocchio.jasyptspringboot.annotation.EncryptablePropertySource;
 
 @Configuration
@@ -19,12 +19,10 @@ public class AppConfiguration {
 	@Value("${db.timer}")
 	private String timer;
 
-	@Bean("manager")
-	public Employee getManager() {
-		Employee factoryBean = new Employee();
-		factoryBean.setDesignation(timer);
-		factoryBean.setPassword(password);
-		return factoryBean;
+	@PostConstruct
+	public void getManager() {
+		System.out.println("password: " + password);
+		System.out.println("timer: " + timer);
 	}
 
 }
