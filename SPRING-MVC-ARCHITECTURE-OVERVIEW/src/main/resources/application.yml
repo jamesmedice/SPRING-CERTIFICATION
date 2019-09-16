@@ -1,0 +1,8 @@
+server:
+  port: ${PORT:8697}
+
+spring:
+  profiles: dev
+
+name: dev-yaml
+environment: dev
