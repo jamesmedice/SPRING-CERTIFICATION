@@ -20,7 +20,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<junit.version>4.12</junit.version>
-		<hibernate-version>5.2.9.Final</hibernate-version>
+		<hibernate-version>5.3.20.Final</hibernate-version>
 	</properties>
 
 	<dependencies>
